@@ -47,3 +47,7 @@
 .admonition.prompt .copy-button:hover {
   background-color: #0041a4; /* Darker blue on hover */
 }
+ol.upper-alpha { 
+  list-style-type: upper-alpha; 
+  padding-left: 1.25rem; 
+}

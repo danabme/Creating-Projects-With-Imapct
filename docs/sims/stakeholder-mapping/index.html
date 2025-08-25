@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Stakeholder Mapping – Power vs Interest</title>
+<style>
+  :root { --w: 700px; --h: 460px; --pad: 64px; }
+  body{ font-family: system-ui,Segoe UI,Roboto,Arial,sans-serif; margin:16px; line-height:1.35 }
+  h2{ margin:0 0 8px 0 }
+  .wrap{ display:flex; gap:16px; flex-wrap:wrap }
+  canvas{ border:1px solid #d0d0d0; background:#fff; touch-action:none }
+  .panel{ flex:1 1 320px; max-width:460px }
+  .row{ display:flex; gap:8px; margin:8px 0; align-items:center; flex-wrap:wrap }
+  input[type="text"]{ padding:6px 8px; font-size:14px; width:220px }
+  button{ padding:6px 10px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; border-radius:6px }
+  button:hover{ background:#eee }
+  .small{ font-size:12px; color:#555 }
+  .legend-item{ display:flex; align-items:center; gap:8px; margin:4px 0 }
+  .dot{ width:12px; height:12px; border-radius:50% }
+  details{ margin-top:8px }
+  .kv{ font-variant-numeric: tabular-nums; }
+  .k{ color:#666 }
+  .group{ margin:8px 0 0; }
+  .group h4{ margin:8px 0 4px; }
+  .pill{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid #ddd; background:#fafafa }
+  .danger{ color:#a11 }
+  .muted{ color:#666 }
+</style>
+</head>
+<body>
+  <h2>Stakeholder Mapping</h2>
+  <div class="small">Drag dots on the grid. X = <b>Power</b> (low → high). Y = <b>Interest</b> (low → high).</div>
+  <div class="wrap">
+    <canvas id="c" width="700" height="460" aria-label="Power vs Interest grid"></canvas>
+
+    <div class="panel">
+      <div class="row">
+        <input id="name" type="text" placeholder="Add stakeholder (e.g., Local NGO)"/>
+        <button id="add">Add</button>
+        <button id="examples">Add examples</button>
+      </div>
+      <div class="row">
+        <button id="reset">Reset</button>
+        <button id="export">Export CSV</button>
+        <span class="small muted">Auto‑saves in your browser.</span>
+      </div>
+
+      <div id="sel" class="row" style="display:none;"></div>
+
+      <div class="group">
+        <h4>List</h4>
+        <div id="list" class="small"></div>
+      </div>
+
+      <details>
+        <summary><b>Quadrants & strategies</b></summary>
+        <div class="small">
+          <p><span class="pill">High Power, High Interest</span> → <b>Manage closely</b> (Key Players)</p>
+          <p><span class="pill">High Power, Low Interest</span> → <b>Keep satisfied</b></p>
+          <p><span class="pill">Low Power, High Interest</span> → <b>Keep informed</b></p>
+          <p><span class="pill">Low Power, Low Interest</span> → <b>Monitor (minimal effort)</b></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+<script>
+(() => {
+  const K = 'stakeholder-map-v1';
+  const c = document.getElementById('c'), ctx = c.getContext('2d');
+  const W = c.width, H = c.height, PAD = 64;
+  const chart = { x: PAD, y: PAD, w: W-2*PAD, h: H-2*PAD };
+  const R = 10;  // dot radius
+  let dots = [];
+  let dragging = null;
+
+  // UI
+  const $ = sel => document.querySelector(sel);
+  const $list = $('#list');
+  const $sel = $('#sel');
+
+  // helpers
+  const clamp = (v,min,max) => Math.max(min, Math.min(max, v));
+  const colorAt = i => `hsl(${(i*73)%360} 70% 50%)`;
+
+  function p2x(p){ return chart.x + (p/100)*chart.w; }
+  function i2y(i){ return chart.y + chart.h - (i/100)*chart.h; }
+  function x2p(x){ return clamp( ((x-chart.x)/chart.w)*100, 0, 100 ); }
+  function y2i(y){ return clamp( ((chart.y+chart.h - y)/chart.h)*100, 0, 100 ); }
+
+  function quadrant(p,i){
+    const hiP = p>=50, hiI = i>=50;
+    if (hiP && hiI) return {key:'manage', label:'Manage closely (Key Players)'};
+    if (hiP && !hiI) return {key:'satisfy', label:'Keep satisfied'};
+    if (!hiP && hiI) return {key:'inform', label:'Keep informed'};
+    return {key:'monitor', label:'Monitor (minimal effort)'};
+  }
+
+  function save(){ localStorage.setItem(K, JSON.stringify({dots})); }
+  function load(){
+    try{
+      const s = localStorage.getItem(K);
+      if (!s) return;
+      const data = JSON.parse(s);
+      if (data && Array.isArray(data.dots)) dots = data.dots;
+    }catch(_){}
+  }
+
+  function addDot(name, p=50, i=50){
+    const id = crypto.randomUUID();
+    const color = colorAt(dots.length);
+    dots.push({id, name: name.trim() || `Stakeholder ${dots.length+1}`, p, i, color});
+    save(); draw(); renderList();
+  }
+
+  function removeDot(id){
+    dots = dots.filter(d=>d.id!==id);
+    save(); draw(); renderList();
+  }
+
+  // drawing
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+
+    // quadrant fills
+    ctx.fillStyle = '#f8fbff'; ctx.fillRect(chart.x+chart.w/2, chart.y, chart.w/2, chart.h/2); // hiP+hiI
+    ctx.fillStyle = '#fff8f2'; ctx.fillRect(chart.x+chart.w/2, chart.y+chart.h/2, chart.w/2, chart.h/2); // hiP+loI
+    ctx.fillStyle = '#f7fff7'; ctx.fillRect(chart.x, chart.y, chart.w/2, chart.h/2); // loP+hiI
+    // loP+loI left white
+
+    // border
+    ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1;
+    ctx.strokeRect(chart.x, chart.y, chart.w, chart.h);
+
+    // midlines
+    ctx.strokeStyle = '#b0b0b0';
+    ctx.beginPath();
+    ctx.moveTo(chart.x+chart.w/2, chart.y); ctx.lineTo(chart.x+chart.w/2, chart.y+chart.h);
+    ctx.moveTo(chart.x, chart.y+chart.h/2); ctx.lineTo(chart.x+chart.w, chart.y+chart.h/2);
+    ctx.stroke();
+
+    // axes labels
+    ctx.fillStyle = '#333'; ctx.font='14px system-ui, sans-serif';
+    ctx.fillText('Low Power', chart.x, chart.y+chart.h+22);
+    ctx.fillText('High Power →', chart.x+chart.w-110, chart.y+chart.h+22);
+    ctx.save(); ctx.translate(chart.x-40, chart.y+chart.h-4); ctx.rotate(-Math.PI/2);
+    ctx.fillText('Low Interest', 0, 0);
+    ctx.restore();
+    ctx.save(); ctx.translate(chart.x-40, chart.y+20); ctx.rotate(-Math.PI/2);
+    ctx.fillText('High Interest ↑', 0, 0);
+    ctx.restore();
+
+    // dots
+    for (const d of dots){
+      const x = p2x(d.p), y = i2y(d.i);
+      // ring
+      ctx.lineWidth = 2; ctx.strokeStyle = '#fff';
+      ctx.beginPath(); ctx.arc(x,y,R+2,0,Math.PI*2); ctx.stroke();
+      // fill
+      ctx.fillStyle = d.color;
+      ctx.beginPath(); ctx.arc(x,y,R,0,Math.PI*2); ctx.fill();
+      // label
+      ctx.fillStyle = '#222'; ctx.font='12px system-ui, sans-serif';
+      ctx.fillText(d.name, x+12, y-12);
+    }
+  }
+
+  function renderList(){
+    const groups = {manage:[], satisfy:[], inform:[], monitor:[]};
+    for(const d of dots){
+      groups[quadrant(d.p,d.i).key].push(d);
+    }
+    const mk = (title,key) => {
+      const items = groups[key].map(d=>`
+        <div class="legend-item">
+          <span class="dot" style="background:${d.color}"></span>
+          <span>${escapeHtml(d.name)}</span>
+          <span class="kv muted"> (P:${d.p.toFixed(0)} I:${d.i.toFixed(0)})</span>
+          <button data-del="${d.id}" title="Remove" style="margin-left:auto">✕</button>
+        </div>`).join('');
+      return `<h4>${title}</h4>${items || '<div class="muted small">None</div>'}`;
+    };
+    $list.innerHTML =
+      mk('Manage closely (Key Players)', 'manage') +
+      mk('Keep satisfied', 'satisfy') +
+      mk('Keep informed', 'inform') +
+      mk('Monitor (minimal effort)', 'monitor');
+
+    // attach delete handlers
+    $list.querySelectorAll('[data-del]').forEach(btn=>{
+      btn.onclick = () => removeDot(btn.getAttribute('data-del'));
+    });
+  }
+
+  function pick(x,y){
+    // return topmost dot under pointer
+    for (let i=dots.length-1; i>=0; i--){
+      const d = dots[i], dx = p2x(d.p)-x, dy = i2y(d.i)-y;
+      if (dx*dx + dy*dy <= (R+4)*(R+4)) return d;
+    }
+    return null;
+  }
+
+  c.addEventListener('pointerdown', e=>{
+    const r = c.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    const d = pick(x,y);
+    if (d){
+      dragging = d;
+      c.setPointerCapture(e.pointerId);
+      updateSelected(d);
+    } else {
+      dragging = null;
+    }
+  });
+
+  c.addEventListener('pointermove', e=>{
+    if (!dragging) return;
+    const r = c.getBoundingClientRect();
+    const x = clamp(e.clientX - r.left, chart.x, chart.x+chart.w);
+    const y = clamp(e.clientY - r.top,  chart.y, chart.y+chart.h);
+    dragging.p = x2p(x);
+    dragging.i = y2i(y);
+    updateSelected(dragging);
+    save(); draw(); renderList();
+  });
+
+  c.addEventListener('pointerup', e=>{
+    dragging = null;
+    c.releasePointerCapture?.(e.pointerId);
+  });
+  c.addEventListener('pointerleave', ()=> dragging=null);
+
+  function updateSelected(d){
+    const q = quadrant(d.p,d.i);
+    $sel.style.display='flex';
+    $sel.innerHTML = `
+      <span class="dot" style="background:${d.color}"></span>
+      <b>${escapeHtml(d.name)}</b>
+      <span class="kv k">Power:</span> ${d.p.toFixed(0)}
+      <span class="kv k">Interest:</span> ${d.i.toFixed(0)}
+      <span class="pill">${q.label}</span>
+    `;
+  }
+
+  // buttons
+  document.getElementById('add').onclick = ()=>{
+    const name = document.getElementById('name').value.trim();
+    if (!name) return;
+    addDot(name, 50, 50);
+    document.getElementById('name').value='';
+  };
+
+  document.getElementById('examples').onclick = ()=>{
+    if (dots.length>0 && !confirm('Add examples to the current list?')) return;
+    ['Local NGO','Municipality','Major Donor','Community Leaders','Students'].forEach((n,i)=>{
+      // spread them across quadrants
+      const presets = [
+        [30,70], [70,30], [75,80], [40,60], [55,55]
+      ];
+      addDot(n, presets[i][0], presets[i][1]);
+    });
+  };
+
+  document.getElementById('reset').onclick = ()=>{
+    if (!confirm('Clear all stakeholders?')) return;
+    dots = []; save(); draw(); renderList();
+    $sel.style.display='none';
+  };
+
+  document.getElementById('export').onclick = ()=>{
+    const rows = [['name','power','interest','quadrant']];
+    for(const d of dots){
+      rows.push([d.name, d.p.toFixed(0), d.i.toFixed(0), quadrant(d.p,d.i).label]);
+    }
+    const csv = rows.map(r=>r.map(s=>`"${String(s).replaceAll('"','""')}"`).join(',')).join('\n');
+    const blob = new Blob([csv], {type:'text/csv'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'stakeholder-map.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+
+  // init
+  load();
+  if (dots.length===0){ addDot('Example', 55, 55); }
+  draw(); renderList();
+})();
+</script>
+</body>
+</html>
