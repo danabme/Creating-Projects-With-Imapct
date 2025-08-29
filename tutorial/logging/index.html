@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Dana Abdel Khalek">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Logging Textbook Usage - Creating Projects with Impact</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Creating Projects with Impact</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Course</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../course/syllabus/" class="dropdown-item">Syllabus</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapters/01-social-enterprise-basics/" class="dropdown-item">1. Social Enterprise Basics</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/02-design-thinking/" class="dropdown-item">2. Design Thinking</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/03-business-model/" class="dropdown-item">3. Business Model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#logging-textbook-usage" class="nav-link">Logging Textbook Usage</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#using-web-analytics" class="nav-link">Using Web Analytics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#detailed-logging" class="nav-link">Detailed Logging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logging-search-terms-and-questions" class="nav-link">Logging Search Terms and Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logging-user-specific-activities" class="nav-link">Logging User-Specific Activities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#regulatory-compliance" class="nav-link">Regulatory Compliance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#building-an-analytics-dashboard" class="nav-link">Building an Analytics Dashboard</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#identifying-underutilized-content" class="nav-link">Identifying Underutilized Content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="logging-textbook-usage">Logging Textbook Usage</h1>
+<!--
+Please create a detailed chapter that discusses the concept of logging online textbook usage.  First discuss how Google Analytics can be used to understand what users are using what pages and when.
+
+Next, discuss the concept of putting more detailed logging into an intelligent textbook.  This would include logging search terms, what questions are asked of a chatbot, what MicroSims were used and for how long and what sections of the textbook are underutilized.  Here is a suggested outline, but feel free to add new sections.
+
+Structure the response like this
+
+# Logging Textbook Usage
+
+## Using Web Analytics
+
+## Derailed Logging
+
+## Logging User-Specific Activities
+
+## Regulatory Compliance
+
+## Building an Analytics Dashboard
+-->
+
+<p>Intelligent textbooks offer tremendous educational possibilities, but understanding 
+how users interact with these resources is essential for continuous improvement. 
+Let's explore comprehensive logging strategies that can help you measure engagement 
+and optimize your intelligent textbooks.</p>
+<h2 id="using-web-analytics">Using Web Analytics</h2>
+<p>Google Analytics provides a solid foundation for understanding basic usage patterns in your intelligent textbook sites. The mkdocs-material theme makes integration straightforward:</p>
+<h3 id="setting-up-google-analytics">Setting Up Google Analytics</h3>
+<ol>
+<li>
+<p><strong>Create a Google Analytics 4 Property</strong> - Sign up for a Google Analytics account if you don't already have one, and create a new property for your intelligent textbook site.</p>
+</li>
+<li>
+<p><strong>Get Your Measurement ID</strong> - After setting up your property, you'll receive a measurement ID (format: G-XXXXXXXXXX).</p>
+</li>
+<li>
+<p><strong>Configure mkdocs.yml</strong> - Add the following to your <code>mkdocs.yml</code> file:</p>
+</li>
+</ol>
+<pre><code>extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Replace with your actual measurement ID
+
+</code></pre>
+<p>As seen in your configuration file, you're already using the property ID <code>G-D7X1XT7Z19</code>.</p>
+<h3 id="key-metrics-to-track">Key Metrics to Track</h3>
+<p>With Google Analytics successfully implemented, you can track:</p>
+<ul>
+<li><strong>Page Views</strong> - Which pages are most frequently visited</li>
+<li><strong>Session Duration</strong> - How long users spend on each page</li>
+<li><strong>User Flow</strong> - How users navigate through your content</li>
+<li><strong>Bounce Rate</strong> - The percentage of visitors who leave after viewing only one page</li>
+<li><strong>Geographic Data</strong> - Where your users are located</li>
+<li><strong>Device Information</strong> - What devices and browsers are being used</li>
+</ul>
+<h3 id="creating-custom-events">Creating Custom Events</h3>
+<p>Beyond the default tracking, you can implement custom events to track specific interactions:</p>
+<pre><code class="language-js">// In your js/extra.js file
+document.addEventListener('DOMContentLoaded', function() {
+  // Track clicks on MicroSim launch buttons
+  const simButtons = document.querySelectorAll('.microsim-launch');
+  simButtons.forEach(button =&gt; {
+    button.addEventListener('click', function() {
+      const simName = this.getAttribute('data-sim-name');
+      gtag('event', 'launch_microsim', {
+        'sim_name': simName
+      });
+    });
+  });
+});
+
+</code></pre>
+<h2 id="detailed-logging">Detailed Logging</h2>
+<p>While Google Analytics provides excellent high-level insights, intelligent textbooks benefit from more detailed logging capabilities, especially for tracking interactive elements like MicroSims and quiz interactions.</p>
+<h3 id="setting-up-a-logging-backend">Setting Up a Logging Backend</h3>
+<ol>
+<li><strong>API Endpoint Creation</strong> - Establish a simple API that can receive and store interaction events:</li>
+</ol>
+<pre><code class="language-python"># Example Flask backend for logging
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import json
+import datetime
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/log', methods=['POST'])
+def log_event():
+    data = request.json
+    data['timestamp'] = datetime.datetime.now().isoformat()
+
+    # Add to log file
+    with open('interaction_logs.jsonl', 'a') as f:
+        f.write(json.dumps(data) + '\n')
+
+    return jsonify({&quot;success&quot;: True})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+</code></pre>
+<ol>
+<li><strong>Client-Side Implementation</strong> - Create JavaScript functions for event logging:</li>
+</ol>
+<pre><code class="language-js">// In js/extra.js
+function logInteraction(eventType, eventData) {
+  const payload = {
+    eventType: eventType,
+    eventData: eventData,
+    page: window.location.pathname,
+    timestamp: new Date().toISOString()
+  };
+
+  fetch('https://your-logging-endpoint.com/log', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload)
+  }).catch(err =&gt; console.error('Logging error:', err));
+}
+
+</code></pre>
+<h3 id="microsim-specific-logging">MicroSim Specific Logging</h3>
+<p>For MicroSims, track detailed usage patterns:</p>
+<pre><code class="language-js">// For p5.js based MicroSims
+function setupMicroSimLogging(simId) {
+  // Log start time
+  const startTime = new Date();
+  logInteraction('microsim_start', {
+    simId: simId,
+    startTime: startTime.toISOString()
+  });
+
+  // Setup interval monitoring for active usage
+  let lastInteractionTime = startTime;
+  const interactionInterval = setInterval(() =&gt; {
+    // If user hasn't interacted in 2 minutes, consider session ended
+    const currentTime = new Date();
+    if (currentTime - lastInteractionTime &gt; 120000) {
+      clearInterval(interactionInterval);
+      logInteraction('microsim_end', {
+        simId: simId,
+        startTime: startTime.toISOString(),
+        endTime: lastInteractionTime.toISOString(),
+        duration: (lastInteractionTime - startTime) / 1000
+      });
+    }
+  }, 10000);
+
+  // Update last interaction time on user input
+  document.getElementById(simId).addEventListener('mousemove', () =&gt; {
+    lastInteractionTime = new Date();
+  });
+}
+</code></pre>
+<h2 id="logging-search-terms-and-questions">Logging Search Terms and Questions</h2>
+<p>For built-in search functionality or AI chatbots integrated with your intelligent textbook:</p>
+<pre><code class="language-js">// Log search queries
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.querySelector('.md-search__input');
+  if (searchInput) {
+    searchInput.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        logInteraction('search_query', {
+          query: this.value
+        });
+      }
+    });
+  }
+
+  // For AI chatbot logging
+  const chatForm = document.querySelector('.chatbot-form');
+  if (chatForm) {
+    chatForm.addEventListener('submit', function(e) {
+      const userQuestion = document.querySelector('.chatbot-input').value;
+      logInteraction('chatbot_question', {
+        question: userQuestion
+      });
+    });
+  }
+});
+
+</code></pre>
+<h2 id="logging-user-specific-activities">Logging User-Specific Activities</h2>
+<p>For personalized learning experiences, implementing user-specific logging provides 
+valuable insights into individual learning patterns.</p>
+<h3 id="anonymous-vs-authenticated-logging">Anonymous vs. Authenticated Logging</h3>
+<p>You can implement both options:</p>
+<ol>
+<li><strong>Anonymous Session Tracking</strong> - Use browser storage to maintain 
+consistency across a single user session:</li>
+</ol>
+<pre><code class="language-js">// Generate anonymous user ID if not present
+let userId = localStorage.getItem('anonymous_user_id');
+if (!userId) {
+  userId = 'anon_' + Math.random().toString(36).substring(2, 15);
+  localStorage.setItem('anonymous_user_id', userId);
+}
+
+// Include in all logging events
+function enhancedLogInteraction(eventType, eventData) {
+  const payload = {
+    userId: userId,
+    eventType: eventType,
+    eventData: eventData,
+    page: window.location.pathname,
+    timestamp: new Date().toISOString()
+  };
+
+  // Logging code...
+}
+
+</code></pre>
+<ol>
+<li><strong>Authenticated User Tracking</strong> - For classroom or institutional settings where users log in:</li>
+</ol>
+<pre><code class="language-js">// Assuming currentUser is set on login
+function userLogInteraction(eventType, eventData) {
+  if (!window.currentUser) return; // Don't log if not logged in
+
+  const payload = {
+    userId: window.currentUser.id,
+    username: window.currentUser.username,
+    eventType: eventType,
+    eventData: eventData,
+    page: window.location.pathname,
+    timestamp: new Date().toISOString()
+  };
+
+  // Logging code...
+}
+
+</code></pre>
+<h3 id="progress-tracking">Progress Tracking</h3>
+<p>For comprehensive learning progress analysis:</p>
+<pre><code class="language-js">// Track completion of chapters/sections
+function markAsCompleted(sectionId) {
+  logInteraction('section_completed', {
+    sectionId: sectionId,
+    completionTime: new Date().toISOString()
+  });
+
+  // Update UI to show completion status
+  document.querySelector(`#${sectionId} .completion-indicator`)
+    .classList.add('completed');
+}
+
+// Track quiz performance
+function logQuizResult(quizId, score, maxPossible) {
+  logInteraction('quiz_completed', {
+    quizId: quizId,
+    score: score,
+    maxPossible: maxPossible,
+    percentage: (score / maxPossible) * 100
+  });
+}
+
+</code></pre>
+<h2 id="regulatory-compliance">Regulatory Compliance</h2>
+<p>When implementing logging systems, especially for educational purposes, 
+adherence to privacy regulations is critical.</p>
+<h3 id="gdpr-compliance">GDPR Compliance</h3>
+<p>For users in the European Union, the General Data Protection Regulation (GDPR) applies:</p>
+<ol>
+<li><strong>Explicit Consent</strong> - Implement a consent banner:</li>
+</ol>
+<pre><code class="language-js">// Cookie consent implementation
+function showConsentBanner() {
+  const banner = document.createElement('div');
+  banner.className = 'consent-banner';
+  banner.innerHTML = `
+    &lt;p&gt;This site uses cookies and logging to improve your learning experience.
+    We track how you use our educational materials to make them better.&lt;/p&gt;
+    &lt;button id=&quot;accept-consent&quot;&gt;Accept&lt;/button&gt;
+    &lt;button id=&quot;reject-consent&quot;&gt;Reject&lt;/button&gt;
+  `;
+  document.body.appendChild(banner);
+
+  document.getElementById('accept-consent').addEventListener('click', () =&gt; {
+    localStorage.setItem('consent_given', 'true');
+    banner.remove();
+    initializeLogging();
+  });
+
+  document.getElementById('reject-consent').addEventListener('click', () =&gt; {
+    localStorage.setItem('consent_given', 'false');
+    banner.remove();
+  });
+}
+
+// Check if consent already given
+if (localStorage.getItem('consent_given') === 'true') {
+  initializeLogging();
+} else if (localStorage.getItem('consent_given') === null) {
+  showConsentBanner();
+}
+</code></pre>
+<h3 id="data-minimization-only-collect-whats-necessary">Data Minimization** - Only collect what's necessary:</h3>
+<pre><code class="language-js">// Example of data minimization in logging
+function logMinimalData(eventType, eventData) {
+  // Remove any personally identifiable information
+  const sanitizedData = {...eventData};
+  delete sanitizedData.email;
+  delete sanitizedData.fullName;
+
+  // Log only essential data
+  logInteraction(eventType, sanitizedData);
+}
+
+</code></pre>
+<h3 id="coppa-and-ferpa-compliance">COPPA and FERPA Compliance</h3>
+<p>For educational materials that might be used by children or in educational institutions in the US:</p>
+<ol>
+<li><strong>Children's Online Privacy Protection Act (COPPA)</strong> - For users under 13:</li>
+</ol>
+<pre><code class="language-js">// Age verification for COPPA compliance
+function checkAgeCompliance() {
+  const userAge = localStorage.getItem('user_age');
+
+  if (!userAge) {
+    const age = prompt(&quot;Please enter your age for compliance purposes:&quot;);
+    localStorage.setItem('user_age', age);
+
+    if (parseInt(age) &lt; 13) {
+      // Disable personal data collection for under 13
+      window.loggingLevel = 'minimal';
+    } else {
+      window.loggingLevel = 'standard';
+    }
+  }
+}
+
+</code></pre>
+<ol>
+<li><strong>Family Educational Rights and Privacy Act (FERPA)</strong> - For educational institutions:</li>
+</ol>
+<pre><code class="language-js">// Example of FERPA compliant logging
+function educationalLogging(eventType, eventData) {
+  // Use institution-assigned ID instead of personal identifiers
+  const payload = {
+    institutionId: window.institutionId,
+    courseId: window.courseId,
+    studentId: window.studentId, // Institution-assigned, not PII
+    eventType: eventType,
+    eventData: eventData
+  };
+
+  // Logging code...
+}
+
+</code></pre>
+<h2 id="building-an-analytics-dashboard">Building an Analytics Dashboard</h2>
+<p>Once you've collected detailed usage data, a dashboard helps visualize patterns and gain actionable insights.</p>
+<h3 id="dashboard-implementation">Dashboard Implementation</h3>
+<ol>
+<li><strong>Data Processing Pipeline</strong>:</li>
+</ol>
+<pre><code class="language-python"># Example data processing script for dashboard
+import pandas as pd
+import json
+
+# Load the log data
+logs = []
+with open('interaction_logs.jsonl', 'r') as f:
+    for line in f:
+        logs.append(json.loads(line))
+
+# Convert to pandas DataFrame
+df = pd.DataFrame(logs)
+
+# Process by event type
+microsim_usage = df[df['eventType'] == 'microsim_end'].groupby('eventData.simId').agg({
+    'eventData.duration': ['count', 'mean', 'median', 'min', 'max']
+})
+
+# Generate insights
+underutilized_pages = df.groupby('page').size().sort_values().head(10)
+popular_pages = df.groupby('page').size().sort_values(ascending=False).head(10)
+popular_search_terms = df[df['eventType'] == 'search_query']['eventData.query'].value_counts().head(20)
+
+# Export for dashboard
+microsim_usage.to_csv('dashboard_data/microsim_usage.csv')
+underutilized_pages.to_csv('dashboard_data/underutilized_pages.csv')
+popular_pages.to_csv('dashboard_data/popular_pages.csv')
+popular_search_terms.to_csv('dashboard_data/popular_search_terms.csv')
+
+</code></pre>
+<h3 id="dashboard-visualization">Dashboard Visualization</h3>
+<pre><code class="language-js">// Using a library like Chart.js for the dashboard
+function loadDashboard() {
+  // MicroSim usage chart
+  fetch('dashboard_data/microsim_usage.json')
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      const ctx = document.getElementById('microsim-usage-chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(data),
+          datasets: [{
+            label: 'Average Usage Time (seconds)',
+            data: Object.values(data).map(item =&gt; item.mean),
+            backgroundColor: 'rgba(54, 162, 235, 0.5)'
+          }]
+        }
+      });
+    });
+
+  // Other dashboard charts...
+}
+
+</code></pre>
+<h3 id="real-time-monitoring">Real-time Monitoring</h3>
+<p>For real-time insights into active usage:</p>
+<pre><code class="language-js">// Server-side with Socket.io for real-time dashboard
+const io = require('socket.io')(server);
+
+// When logging an event
+app.post('/log', (req, res) =&gt; {
+  const data = req.body;
+
+  // Save to database...
+
+  // Emit for real-time dashboard
+  io.emit('new_event', data);
+
+  res.json({success: true});
+});
+
+// Client-side dashboard updates
+const socket = io.connect('https://your-logging-server.com');
+socket.on('new_event', (data) =&gt; {
+  // Update dashboard in real-time
+  updateDashboardMetrics(data);
+});
+
+</code></pre>
+<h3 id="intelligent-content-recommendations">Intelligent Content Recommendations</h3>
+<p>Use your logging data to power a recommendation engine:</p>
+<pre><code class="language-js"># Simplified recommendation engine
+def generate_recommendations(user_id):
+    # Get user's recent activity
+    user_logs = db.query(f&quot;SELECT * FROM logs WHERE user_id = '{user_id}' ORDER BY timestamp DESC LIMIT 100&quot;)
+
+    # Extract concepts and topics the user has engaged with
+    user_concepts = extract_concepts_from_logs(user_logs)
+
+    # Find related content that hasn't been viewed
+    recommendations = db.query(f&quot;&quot;&quot;
+        SELECT page_id, title FROM content
+        WHERE primary_concept IN ({','.join(user_concepts)})
+        AND page_id NOT IN (
+            SELECT page FROM logs WHERE user_id = '{user_id}' AND eventType = 'page_view'
+        )
+        LIMIT 5
+    &quot;&quot;&quot;)
+
+    return recommendations
+
+</code></pre>
+<h2 id="identifying-underutilized-content">Identifying Underutilized Content</h2>
+<p>One key advantage of comprehensive logging is identifying which sections of your intelligent textbook aren't receiving adequate attention.</p>
+<h3 id="content-engagement-analysis">Content Engagement Analysis</h3>
+<pre><code class="language-ps"># Analyze content engagement
+def analyze_content_engagement(logs_df, threshold=0.1):
+    # Get all pages
+    all_pages = get_all_pages_from_site_map()
+
+    # Count views per page
+    page_views = logs_df[logs_df['eventType'] == 'page_view'].groupby('page').size()
+
+    # Calculate total views
+    total_views = page_views.sum()
+
+    # Find pages with less than threshold% of total views
+    underutilized = []
+    for page in all_pages:
+        if page not in page_views or page_views[page] / total_views &lt; threshold:
+            underutilized.append({
+                'page': page,
+                'views': page_views.get(page, 0),
+                'percentage': (page_views.get(page, 0) / total_views) * 100 if total_views &gt; 0 else 0
+            })
+
+    return sorted(underutilized, key=lambda x: x['views'])
+
+</code></pre>
+<p>By implementing these detailed logging strategies, you'll gain valuable insights 
+into how users interact with your intelligent textbooks. 
+This data will guide your content development efforts, helping you create
+more engaging and effective educational resources that truly meet your learners' needs.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

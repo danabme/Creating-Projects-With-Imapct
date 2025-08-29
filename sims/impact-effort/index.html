@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Impact vs Effort</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; }
+    canvas { border: 1px solid #ccc; touch-action:none; }
+    #hint { margin-top:8px; }
+  </style>
+</head>
+<body>
+<h2>Impact vs Effort</h2>
+<canvas id="c" width="600" height="400"></canvas>
+<div id="hint">Click to place your project. Drag to move.</div>
+<script>
+const c = document.getElementById('c'), ctx = c.getContext('2d');
+let dot = {x: 300, y: 200, drag:false};
+function draw(){
+  ctx.clearRect(0,0,c.width,c.height);
+  // axes
+  ctx.strokeStyle="#999"; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(0,200); ctx.lineTo(600,200); ctx.stroke();    // x mid
+  ctx.beginPath(); ctx.moveTo(300,0); ctx.lineTo(300,400); ctx.stroke();    // y mid
+  // labels
+  ctx.fillStyle="#333"; ctx.fillText("Low Effort", 10, 192);
+  ctx.fillText("High Effort", 510, 192);
+  ctx.save(); ctx.translate(308,12); ctx.rotate(Math.PI/2); ctx.fillText("High Impact",0,0); ctx.restore();
+  ctx.save(); ctx.translate(292,388); ctx.rotate(-Math.PI/2); ctx.fillText("Low Impact",0,0); ctx.restore();
+  // quadrants
+  ctx.fillStyle="#eef"; ctx.fillRect(300,0,300,200);      // high impact / low effort (ideal)
+  // dot
+  ctx.fillStyle="#0078d4";
+  ctx.beginPath(); ctx.arc(dot.x,dot.y,8,0,Math.PI*2); ctx.fill();
+}
+c.addEventListener('pointerdown',e=>{dot.drag=true; set(e)});
+c.addEventListener('pointermove',e=>{ if(dot.drag){ set(e)}});
+c.addEventListener('pointerup',()=>dot.drag=false);
+c.addEventListener('pointerleave',()=>dot.drag=false);
+function set(e){
+  const r=c.getBoundingClientRect();
+  dot.x = Math.max(0, Math.min(600, e.clientX - r.left));
+  dot.y = Math.max(0, Math.min(400, e.clientY - r.top));
+  draw();
+}
+draw();
+</script>
+</body>
+</html>

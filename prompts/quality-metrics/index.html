@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Dana Abdel Khalek">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Generating Analytics for Intelligent Textbook Quality Metrics - Creating Projects with Impact</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Creating Projects with Impact</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Course</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../course/syllabus/" class="dropdown-item">Syllabus</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapters/01-social-enterprise-basics/" class="dropdown-item">1. Social Enterprise Basics</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/02-design-thinking/" class="dropdown-item">2. Design Thinking</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/03-business-model/" class="dropdown-item">3. Business Model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#generating-analytics-for-intelligent-textbook-quality-metrics" class="nav-link">Generating Analytics for Intelligent Textbook Quality Metrics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#response" class="nav-link">Response</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-quantitative-metrics-already-being-tracked-in-get-metrics-jsonpy" class="nav-link">1. Quantitative Metrics (already being tracked in get-metrics-json.py):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="generating-analytics-for-intelligent-textbook-quality-metrics">Generating Analytics for Intelligent Textbook Quality Metrics</h1>
+<p>This prompt helps us generate a Python program that generates
+additional quality metrics on an intelligent textbook that
+is stored on a website where the source is markdown.  To
+run the script you will need to have cloned the textbook on
+a local drive.</p>
+<p>!!! prompt
+    We have already created python programs that do simple reporting on the counts of things like total number of markdown files, total word count, number of MicroSims and the number of terms in the glossary.</p>
+<pre><code>What additional metrics can we use to measure the quality of content in a intelligent textbook?
+
+Please look in the project folder for the file `get-metrics-json.py` for an example of the type of metrics we are already gathering and the sample format for the JSON output of these metrics.
+</code></pre>
+<h2 id="response">Response</h2>
+<p>I'll help analyze metrics for intelligent textbooks based on the provided files. Let me break this down systematically.</p>
+<p>From the provided files and examples, I can identify several key metrics that can help measure the quality of content in an intelligent textbook:</p>
+<h2 id="1-quantitative-metrics-already-being-tracked-in-get-metrics-jsonpy">1. Quantitative Metrics (already being tracked in get-metrics-json.py):</h2>
+<ul>
+<li>Markdown file count (content breadth)</li>
+<li>Image count (visual content)</li>
+<li>Word count (content depth)</li>
+<li>MicroSim count (interactive elements)</li>
+<li>Glossary term count (terminology coverage)</li>
+</ul>
+<h3 id="2-additional-quality-metrics-to-consider">2. Additional Quality Metrics to Consider:</h3>
+<p>*<em>Content Structure:</em></p>
+<ul>
+<li>Learning graph completeness (prerequisites and dependencies mapped)</li>
+<li>Navigation depth and organization (from mkdocs.yml structure)</li>
+<li>Admonition usage (notes, warnings, tips that enhance learning)</li>
+<li>Quiz coverage per chapter</li>
+<li>Code example coverage</li>
+<li>Interactive element distribution</li>
+</ul>
+<p><strong>Engagement Features:</strong></p>
+<ul>
+<li>MicroSim complexity and interactivity levels</li>
+<li>Feedback mechanisms implementation</li>
+<li>Google Analytics integration for usage tracking</li>
+<li>Student progress tracking capabilities</li>
+<li>Practice problem availability</li>
+</ul>
+<p><strong>Technical Quality:</strong></p>
+<ul>
+<li>Build system completeness (proper mkdocs.yml configuration)</li>
+<li>Mobile responsiveness</li>
+<li>Accessibility compliance</li>
+<li>Load time performance</li>
+<li>Code quality in MicroSims</li>
+</ul>
+<p>Let me create a tool to help evaluate these metrics:</p>
+<p><a href="https://github.com/dmccreary/mkdocs-for-intelligent-textbooks/blob/main/src/site-metrics/advanced-metrics.py">Advanced Metrics Python Program</a></p>
+<p>Here is a sample report for the <a href="https://dmccreary.github.io/graph-systems-thinking">Graph Systems Thinking</a> Site:</p>
+<pre><code># Intelligent Textbook Quality Report
+
+## Basic Metrics
+
+- Markdown Files: 47
+- Images: 25
+- Word Count: 18029
+- MicroSims: 3
+- Glossary Terms: 38
+
+## Content Structure
+
+- Navigation Depth: 1
+- Admonitions: 0
+- Code Examples: 28
+
+## Engagement Features
+
+- Microsim Complexity:
+  - Simple: 2
+  - Medium: 1
+  - Complex: 0
+- Has Analytics: False
+
+## Technical Quality
+
+- Build Config Complete:
+  - Site Name: True
+  - Theme: True
+  - Nav: True
+- Responsive Design:
+  - Mobile Navigation: False
+</code></pre>
+<p>This analyzer tool provides a comprehensive framework for evaluating intelligent textbooks. It measures:</p>
+<ol>
+<li>
+<p>Content Completeness:</p>
+</li>
+<li>
+<p>Proper navigation structure</p>
+</li>
+<li>Balanced distribution of content types</li>
+<li>Comprehensive glossary coverage</li>
+<li>
+<p>Learning graph implementation</p>
+</li>
+<li>
+<p>Interactive Elements:</p>
+</li>
+<li>
+<p>MicroSim distribution and complexity</p>
+</li>
+<li>Quiz coverage</li>
+<li>Practice problems</li>
+<li>
+<p>Feedback mechanisms</p>
+</li>
+<li>
+<p>Technical Implementation:</p>
+</li>
+<li>
+<p>Build system configuration</p>
+</li>
+<li>Analytics integration</li>
+<li>Accessibility features</li>
+<li>Code quality</li>
+</ol>
+<p>Would you like me to focus on any particular aspect of these metrics or help implement specific checks for any of these areas? I can also help create visualization tools to track these metrics across multiple textbooks in your collection.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

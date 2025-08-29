@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Dana Abdel Khalek">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Case Studies - Creating Projects with Impact</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Creating Projects with Impact</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Course</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../course/syllabus/" class="dropdown-item">Syllabus</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../chapters/01-social-enterprise-basics/" class="dropdown-item">1. Social Enterprise Basics</a>
+</li>
+                                    
+<li>
+    <a href="../chapters/02-design-thinking/" class="dropdown-item">2. Design Thinking</a>
+</li>
+                                    
+<li>
+    <a href="../chapters/03-business-model/" class="dropdown-item">3. Business Model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#case-studies-in-building-intelligent-textbooks" class="nav-link">Case Studies in Building Intelligent Textbooks</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#ai-assisted-geometry" class="nav-link">AI Assisted Geometry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ai-based-data-science-with-python" class="nav-link">AI Based Data Science with Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ai-circuits-course" class="nav-link">AI Circuits Course</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ai-racing-league" class="nav-link">AI Racing League</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#applied-linear-algebra-for-computer-science-and-electrical-engineering" class="nav-link">Applied Linear Algebra for Computer Science and Electrical Engineering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#architectural-tradeoff-analysis-method" class="nav-link">Architectural Tradeoff Analysis Method</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#beginning-electronics-with-ai" class="nav-link">Beginning Electronics with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#building-ai-agents-with-python" class="nav-link">Building AI Agents with Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#deep-learning-with-ai" class="nav-link">Deep Learning with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#designing-and-building-and-clocks-and-watches-with-ai" class="nav-link">Designing and Building and Clocks and Watches with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#digital-design-with-programmable-logic" class="nav-link">Digital Design With Programmable Logic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#digital-electronics-with-ai" class="nav-link">Digital Electronics with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fluid-power-systems" class="nav-link">Fluid Power Systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generative-ai-architecture-patterns" class="nav-link">Generative AI Architecture Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generative-ai-strategy" class="nav-link">Generative AI Strategy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generative-ai-for-teachers" class="nav-link">Generative AI for Teachers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#graph-algorithms-with-ai" class="nav-link">Graph Algorithms with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#graph-data-modeling-with-ai" class="nav-link">Graph Data Modeling with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#graph-learning-management-systems" class="nav-link">Graph Learning Management Systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#graphrag" class="nav-link">GraphRAG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#intelligent-textbooks" class="nav-link">Intelligent Textbooks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#introduction-to-microcontrollers-with-the-pic24" class="nav-link">Introduction to Microcontrollers with the PIC24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#introduction-to-operating-systems" class="nav-link">Introduction to Operating Systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#learning-graphs" class="nav-link">Learning Graphs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#learning-micropython-with-ai" class="nav-link">Learning MicroPython with AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#micro-simulations-for-electrical-engineering" class="nav-link">Micro Simulations for Electrical Engineering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#microsims" class="nav-link">MicroSims</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#moving-rainbow" class="nav-link">Moving Rainbow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#neurodiversity-course" class="nav-link">Neurodiversity Course</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#personal-finance" class="nav-link">Personal Finance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#robot-day" class="nav-link">Robot Day</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#stem-robots" class="nav-link">STEM Robots</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#signal-processing" class="nav-link">Signal Processing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#spectrum-analyzer" class="nav-link">Spectrum Analyzer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tracking-ai" class="nav-link">Tracking AI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="case-studies-in-building-intelligent-textbooks">Case Studies in Building Intelligent Textbooks</h1>
+<p>This document provides a sample of some of the intelligent textbooks that
+have been created with our workflows.</p>
+<h2 id="ai-assisted-geometry">AI Assisted Geometry</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/geometry-course">https://dmccreary.github.io/geometry-course</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/geometry-course">https://github.com/dmccreary/geometry-course</a></li>
+</ul>
+<p><strong>Description:</strong> AI Assisted Geometry is an online intelligent textbook that uses AI to help high-school students learn geometry using MicroSims.</p>
+<p><strong>Status:</strong> We have created a detailed learning graph and about a dozen MicroSims.  We are looking for schools, teachers students to give us feedback.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 47</li>
+<li>Images: 25</li>
+<li>Word Count: 18093</li>
+<li>MicroSims: 3</li>
+<li>Glossary Terms: 38</li>
+</ul>
+<hr />
+<h2 id="ai-based-data-science-with-python">AI Based Data Science with Python</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/data-science-course">https://dmccreary.github.io/data-science-course</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/data-science-course">https://github.com/dmccreary/data-science-course</a></li>
+</ul>
+<p><strong>Description:</strong> An AI based data science course that uses AI to help undergraduate college learn data science with Python.</p>
+<p><strong>Status:</strong> We have created a detailed learning graph.  We are looking for feedback on the priorities of the next steps.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 21</li>
+<li>Images: 3</li>
+<li>Word Count: 22992</li>
+<li>MicroSims: 1</li>
+<li>Glossary Terms: 143</li>
+</ul>
+<hr />
+<h2 id="ai-circuits-course">AI Circuits Course</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/circuits/">https://dmccreary.github.io/circuits/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/circuits/">https://dmccreary.github.io/circuits/</a></li>
+</ul>
+<p><strong>Description:</strong> Designing circuits using AI.  Created to support Dr. Sharat Bhatra's circuits course at the University of Minnesota.</p>
+<p><strong>Status:</strong> Early stage.</p>
+<hr />
+<h2 id="ai-racing-league">AI Racing League</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://coderdojotc.github.io/ai-racing-league">https://coderdojotc.github.io/ai-racing-league</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/CoderDojoTC/ai-racing-league">https://github.com/CoderDojoTC/ai-racing-league</a></li>
+</ul>
+<p><strong>Description:</strong> The AI Racing League is a project to support a fun way of teaching of AI and machine learning using a $300 RC car with a Raspberry Pi and a Camera.</p>
+<p><strong>Status:</strong> We have created extensive content based on the recent upgrades from the NVIDIA Nano to the Raspberry Pi.  We plan to continue to evolve the site to support the DonkeyCar projects.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 107</li>
+<li>Images: 70</li>
+<li>Word Count: 39402</li>
+<li>MicroSims: 0</li>
+<li>Glossary Terms: 20</li>
+</ul>
+<hr />
+<h2 id="applied-linear-algebra-for-computer-science-and-electrical-engineering">Applied Linear Algebra for Computer Science and Electrical Engineering</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://artemispearson.github.io/learning-graphs/">https://artemispearson.github.io/learning-graphs/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://artemispearson.github.io/learning-graphs/">https://artemispearson.github.io/learning-graphs/</a></li>
+</ul>
+<hr />
+<h2 id="architectural-tradeoff-analysis-method">Architectural Tradeoff Analysis Method</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/atam/">https://dmccreary.github.io/atam/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/atam">https://github.com/dmccreary/atam</a></li>
+</ul>
+<p><strong>Description:</strong> ATAM is a method for evaluating software architecture.  We apply ATAM to the database selection process.  This book is a companion to the book 'Making Sense of NoSQL'.</p>
+<p><strong>Status:</strong> Early stage.</p>
+<hr />
+<h2 id="beginning-electronics-with-ai">Beginning Electronics with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/beginning-electronics">https://dmccreary.github.io/beginning-electronics</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/beginning-electronics">https://github.com/dmccreary/beginning-electronics</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to help junior high and high students learn the basics of electronics.</p>
+<p><strong>Status:</strong> Very minimal content and a few example MicroSims.  We are looking for feedback on the priorities of the next steps.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 40</li>
+<li>Images: 89</li>
+<li>Word Count: 15771</li>
+<li>MicroSims: 6</li>
+<li>Glossary Terms: 0</li>
+</ul>
+<hr />
+<h2 id="building-ai-agents-with-python">Building AI Agents with Python</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/agents-course/">https://dmccreary.github.io/agents-course/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/agents-course/">https://dmccreary.github.io/agents-course/</a></li>
+</ul>
+<p><strong>Description:</strong> Creating intelligent agents with Python and LLMs.</p>
+<p><strong>Status:</strong> Early stage.</p>
+<hr />
+<h2 id="deep-learning-with-ai">Deep Learning with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/deep-learning-course">https://dmccreary.github.io/deep-learning-course</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/deep-learning-course">https://github.com/dmccreary/deep-learning-course</a></li>
+</ul>
+<p><strong>Description:</strong> Undergraduate Deep Learning Course with Dr. Sang-Hyun Oh at the University of Minnesota.</p>
+<hr />
+<h2 id="designing-and-building-and-clocks-and-watches-with-ai">Designing and Building and Clocks and Watches with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/clocks-and-watches">https://dmccreary.github.io/clocks-and-watches</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/clocks-and-watches">https://github.com/dmccreary/clocks-and-watches</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to help high school students learn how to design and build clocks and watches.  We focus on using a breadboard, microcontrollers, displays, real-time clocks and displays.</p>
+<p><strong>Status:</strong> We have a lot of content, a detailed learning graph and are considering testing the content in a live classroom setting.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 124</li>
+<li>Images: 105</li>
+<li>Word Count: 37325</li>
+<li>MicroSims: 11</li>
+<li>Glossary Terms: 149</li>
+</ul>
+<hr />
+<h2 id="digital-design-with-programmable-logic">Digital Design With Programmable Logic</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://mcbasken.github.io/umn-senior-design/">https://mcbasken.github.io/umn-senior-design/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://mcbasken.github.io/umn-senior-design/">https://mcbasken.github.io/umn-senior-design/</a></li>
+</ul>
+<hr />
+<h2 id="digital-electronics-with-ai">Digital Electronics with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/digital-electronics">https://dmccreary.github.io/digital-electronics</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/digital-electronics">https://github.com/dmccreary/digital-electronics</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to help high school students learn basic digital electronics.  We focus on using a breadboard, simple LEDs, buttons and logic gates.  We assume students have access to about $50 worth of parts.  We do not cover microcontrollers.</p>
+<p><strong>Status:</strong> We have created a simple framework and we are adding new MicroSims as needed.  We are looking for schools, teachers and students to give us feedback on what content to create next.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 15</li>
+<li>Images: 15</li>
+<li>Word Count: 2708</li>
+<li>MicroSims: 3</li>
+<li>Glossary Terms: 0</li>
+</ul>
+<hr />
+<h2 id="fluid-power-systems">Fluid Power Systems</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/fluid-power-systems/">https://dmccreary.github.io/fluid-power-systems/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/fluid-power-systems/">https://dmccreary.github.io/fluid-power-systems/</a></li>
+</ul>
+<p><strong>Description:</strong> Done in conjunction with Peter Vinck at Inflow Corporation</p>
+<p><strong>Status:</strong> Early stage.</p>
+<hr />
+<h2 id="generative-ai-architecture-patterns">Generative AI Architecture Patterns</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/genai-arch-patterns">https://dmccreary.github.io/genai-arch-patterns</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/genai-arch-patterns">https://github.com/dmccreary/genai-arch-patterns</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses AI to help software architects understand how to use generative AI to create and maintain their AI architecture patterns.</p>
+<p><strong>Status:</strong> Minimal content and slides.  Use to support an AI architecture consulting practice and presentation at the MACC conferences in 2023 and 2024.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 34</li>
+<li>Images: 5</li>
+<li>Word Count: 7283</li>
+<li>MicroSims: 1</li>
+<li>Glossary Terms: 16</li>
+</ul>
+<hr />
+<h2 id="generative-ai-strategy">Generative AI Strategy</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/cmm-for-genai">https://dmccreary.github.io/cmm-for-genai</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/cmm-for-genai">https://github.com/dmccreary/cmm-for-genai</a></li>
+</ul>
+<p><strong>Description:</strong> Generative AI Strategy is an online course that uses AI to help business leaders understand how to use generative AI to create and maintain their AI business strategy.</p>
+<p><strong>Status:</strong> Minimal content and slides.  Use to support an AI strategy development consulting practice.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 22</li>
+<li>Images: 10</li>
+<li>Word Count: 6972</li>
+<li>MicroSims: 3</li>
+<li>Glossary Terms: 0</li>
+</ul>
+<hr />
+<h2 id="generative-ai-for-teachers">Generative AI for Teachers</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://coderdojotc.github.io/chatgpt-for-teachers">https://coderdojotc.github.io/chatgpt-for-teachers</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/CoderDojoTC/chatgpt-for-teachers">https://github.com/CoderDojoTC/chatgpt-for-teachers</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses AI to help teachers understand how to use generative AI to create and maintain their AI teaching materials.</p>
+<p><strong>Status:</strong> Minimal content and slides but many sample prompts and MicroSims.  Use to support a talks given in 2023 and 2024.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 98</li>
+<li>Images: 47</li>
+<li>Word Count: 19019</li>
+<li>MicroSims: 100</li>
+<li>Glossary Terms: 15</li>
+</ul>
+<hr />
+<h2 id="graph-algorithms-with-ai">Graph Algorithms with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/graph-algorithms">https://dmccreary.github.io/graph-algorithms</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/graph-algorithms">https://github.com/dmccreary/graph-algorithms</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to help undergraduate college students learn the basics of graph algorithms.</p>
+<p><strong>Status:</strong> Many MicroSims created using a variety of JavaScript libraries.  We are looking for feedback on the priorities of the next steps.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 71</li>
+<li>Images: 49</li>
+<li>Word Count: 30360</li>
+<li>MicroSims: 15</li>
+<li>Glossary Terms: 84</li>
+</ul>
+<hr />
+<h2 id="graph-data-modeling-with-ai">Graph Data Modeling with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/graph-data-modeling-course">https://dmccreary.github.io/graph-data-modeling-course</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/graph-data-modeling-course">https://github.com/dmccreary/graph-data-modeling-course</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to help undergraduate college students learn the basics of graph data modeling.  Example graph data models created for a variety of domains.</p>
+<p><strong>Status:</strong> Many MicroSims created using mostly vis.js.  We are looking for feedback on the priorities of the next steps.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 49</li>
+<li>Images: 10</li>
+<li>Word Count: 13491</li>
+<li>MicroSims: 3</li>
+<li>Glossary Terms: 156</li>
+</ul>
+<hr />
+<h2 id="graph-learning-management-systems">Graph Learning Management Systems</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/graph-lms">https://dmccreary.github.io/graph-lms</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/graph-lms">https://github.com/dmccreary/graph-lms</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses MicroSims to helps data architects learn how of graphs are used to build AI learning management systems.  Used to help various startups interested in the integrating AI into production learning management systems.</p>
+<p><strong>Status:</strong> Several MicroSims created using mostly vis.js.  We are looking for feedback on the priorities of the next steps.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 17</li>
+<li>Images: 13</li>
+<li>Word Count: 7877</li>
+<li>MicroSims: 10</li>
+<li>Glossary Terms: 52</li>
+</ul>
+<hr />
+<h2 id="graphrag">GraphRAG</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/graph-rag">https://dmccreary.github.io/graph-rag</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/graph-rag">https://github.com/dmccreary/graph-rag</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that teaches the concepts around GraphRag.</p>
+<p><strong>Status:</strong> Used to support a talk on GraphRAG.  Minimal content.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 14</li>
+<li>Images: 3</li>
+<li>Word Count: 7583</li>
+<li>MicroSims: 0</li>
+<li>Glossary Terms: 33</li>
+</ul>
+<hr />
+<h2 id="intelligent-textbooks">Intelligent Textbooks</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/intelligent-textbooks">https://dmccreary.github.io/intelligent-textbooks</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/intelligent-textbooks">https://github.com/dmccreary/intelligent-textbooks</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that uses helps participants build intelligent textbooks using the mkdocs-material documentation build system.  This site contains a detailed tutorial on how to get started and was that the mkdocs-material system can be extended to support intelligent textbooks.</p>
+<p><strong>Status:</strong> Many best practices and detailed tutorial created.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Images: 23</li>
+<li>Word Count: 11914</li>
+<li>MicroSims: 4</li>
+<li>Glossary Terms: 31</li>
+</ul>
+<hr />
+<h2 id="introduction-to-microcontrollers-with-the-pic24">Introduction to Microcontrollers with the PIC24</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://irvinggsea.github.io/i-book-v1/">https://irvinggsea.github.io/i-book-v1/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://irvinggsea.github.io/i-book-v1/">https://irvinggsea.github.io/i-book-v1/</a></li>
+</ul>
+<hr />
+<h2 id="introduction-to-operating-systems">Introduction to Operating Systems</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://btlepak.github.io/Intelligent_Textbook/">https://btlepak.github.io/Intelligent_Textbook/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://btlepak.github.io/Intelligent_Textbook/">https://btlepak.github.io/Intelligent_Textbook/</a></li>
+</ul>
+<hr />
+<h2 id="learning-graphs">Learning Graphs</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/learning-graphs">https://dmccreary.github.io/learning-graphs</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/learning-graphs">https://github.com/dmccreary/learning-graphs</a></li>
+</ul>
+<p><strong>Description:</strong> Site focused on the creation and maintenance of learning graphs.  Extensive examples of how vis.js is used to create and maintain learning graphs.</p>
+<p><strong>Status:</strong> Many examples of how vis.js is used to create and maintain learning graphs.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 74</li>
+<li>Images: 46</li>
+<li>Word Count: 33460</li>
+<li>MicroSims: 2</li>
+<li>Glossary Terms: 47</li>
+</ul>
+<hr />
+<h2 id="learning-micropython-with-ai">Learning MicroPython with AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/learning-micropython">https://dmccreary.github.io/learning-micropython</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/learning-micropython">https://github.com/dmccreary/learning-micropython</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that helps kids learn MicroPython on microcontrollers using fun low-cost projects.</p>
+<p><strong>Status:</strong> Extensive content and Google Analytics shows we are getting thousands of hits per month from users all over the world.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 204</li>
+<li>Images: 232</li>
+<li>Word Count: 63428</li>
+<li>MicroSims: 2</li>
+<li>Glossary Terms: 0</li>
+</ul>
+<hr />
+<h2 id="micro-simulations-for-electrical-engineering">Micro Simulations for Electrical Engineering</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://kenn0727.github.io/ee-microsims">https://kenn0727.github.io/ee-microsims</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/kenn0727/ee-microsims">https://github.com/kenn0727/ee-microsims</a></li>
+</ul>
+<p><strong>Description:</strong> A site that contains 11 MicroSims created in 2024 by a group of six students at the University of Minnesota during their Senior Project in the Department of Electrical Engineering an Computer Design.  The MicroSims were designed to help students learn the basics of electrical engineering.</p>
+<p><strong>Status:</strong> Some good examples of MicroSims created in p5.js by students learning how to do prompt engineering using ChatGPT.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 14</li>
+<li>Images: 23</li>
+<li>Word Count: 1105</li>
+<li>MicroSims: 12</li>
+<li>Glossary Terms: 0</li>
+</ul>
+<hr />
+<h2 id="microsims">MicroSims</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/microsims">https://dmccreary.github.io/microsims</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/microsims">https://github.com/dmccreary/microsims</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that helps participants learn how to create MicroSims using JavaScript and the p5.js library.  The site is used as a showcase for the diversity of subjects MicroSims can be used to teach.</p>
+<p><strong>Status:</strong> Many sample MicroSims and detailed tutorials created.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 88</li>
+<li>Images: 85</li>
+<li>Word Count: 17582</li>
+<li>MicroSims: 66</li>
+<li>Glossary Terms: 20</li>
+</ul>
+<hr />
+<h2 id="moving-rainbow">Moving Rainbow</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/moving-rainbow">https://dmccreary.github.io/moving-rainbow</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/moving-rainbow">https://github.com/dmccreary/moving-rainbow</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that colorful addressable LED strips and LED noodles to create fun hands on projects for students learning computational thinking.</p>
+<p><strong>Status:</strong> The site is used by schools that teach coding and have the right hardware.  Many examples of how to use addressable LED strips and LED noodles to create fun projects using MicroPython.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 49</li>
+<li>Images: 104</li>
+<li>Word Count: 16849</li>
+<li>MicroSims: 0</li>
+<li>Glossary Terms: 6</li>
+</ul>
+<hr />
+<h2 id="neurodiversity-course">Neurodiversity Course</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/neurodiversity-course/">https://dmccreary.github.io/neurodiversity-course/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/neurodiversity-course/">https://dmccreary.github.io/neurodiversity-course/</a></li>
+</ul>
+<hr />
+<h2 id="personal-finance">Personal Finance</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/personal-finance/">https://dmccreary.github.io/personal-finance/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/personal-finance/">https://dmccreary.github.io/personal-finance/</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that helps high school students learn personal finance.  Many MicroSims and Infographics with graphic novel storytelling.</p>
+<hr />
+<h2 id="robot-day">Robot Day</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/robot-day">https://dmccreary.github.io/robot-day</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/robot-day">https://github.com/dmccreary/robot-day</a></li>
+</ul>
+<p><strong>Description:</strong> An online resources for single-day events at schools that want to get students excited about STEM by doing fun interactive hands-on projects on a series of tables that drive the students to understand all the components of a collision-avoidance robot.</p>
+<p><strong>Status:</strong> The site is used by schools that want to get students excited about STEM by doing fun interactive hands-on projects on a series of tables that drive the students to understand all the components of a collision-avoidance robot.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 52</li>
+<li>Images: 64</li>
+<li>Word Count: 25930</li>
+<li>MicroSims: 1</li>
+<li>Glossary Terms: 4</li>
+</ul>
+<hr />
+<h2 id="stem-robots">STEM Robots</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/stem-robots">https://dmccreary.github.io/stem-robots</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/stem-robots">https://github.com/dmccreary/stem-robots</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that helps high school students learn the basics of STEM and robotics.  THe site is built around using the Raspberry Pi RP2040 chip on low-cost robotics kits to teach fun and engaging projects that teach computational thinking</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 74</li>
+<li>Images: 80</li>
+<li>Word Count: 18244</li>
+<li>MicroSims: 5</li>
+<li>Glossary Terms: 46</li>
+</ul>
+<hr />
+<h2 id="signal-processing">Signal Processing</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/signal-processing">https://dmccreary.github.io/signal-processing</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/signal-processing">https://github.com/dmccreary/signal-processing</a></li>
+</ul>
+<p><strong>Description:</strong> An online course demonstrates how generative AI tools can be used to create undergraduate college courses about on the topic of signal processing.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 53</li>
+<li>Images: 17</li>
+<li>Word Count: 28485</li>
+<li>MicroSims: 6</li>
+<li>Glossary Terms: 105</li>
+</ul>
+<hr />
+<h2 id="spectrum-analyzer">Spectrum Analyzer</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/spectrum-analyzer/">https://dmccreary.github.io/spectrum-analyzer/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://dmccreary.github.io/spectrum-analyzer/">https://dmccreary.github.io/spectrum-analyzer/</a></li>
+</ul>
+<p><strong>Description:</strong> Create a spectrum analyzer using a Raspberry Pi Pico and a microphone.  The site contains a detailed tutorial on how to build the hardware and software.</p>
+<hr />
+<h2 id="tracking-ai">Tracking AI</h2>
+<ul>
+<li><strong>Site URL:</strong> <a href="https://dmccreary.github.io/tracking-ai-course">https://dmccreary.github.io/tracking-ai-course</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/dmccreary/tracking-ai-course">https://github.com/dmccreary/tracking-ai-course</a></li>
+</ul>
+<p><strong>Description:</strong> An online course that teaches how to track the progress of AI.  The site was designed to support strategy consulting within education and knowledge management organizations.  The site also includes sample MicroSims and infographics.</p>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>Markdown Files: 47</li>
+<li>Images: 25</li>
+<li>Word Count: 18093</li>
+<li>MicroSims: 3</li>
+<li>Glossary Terms: 38</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Dana Abdel Khalek">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Best Practices for Creating Intelligent Textbooks with MkDocs Material - Creating Projects with Impact</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Creating Projects with Impact</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Course</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../course/syllabus/" class="dropdown-item">Syllabus</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapters/01-social-enterprise-basics/" class="dropdown-item">1. Social Enterprise Basics</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/02-design-thinking/" class="dropdown-item">2. Design Thinking</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/03-business-model/" class="dropdown-item">3. Business Model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practices-for-creating-intelligent-textbooks-with-mkdocs-material" class="nav-link">Best Practices for Creating Intelligent Textbooks with MkDocs Material</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#repository-structure" class="nav-link">Repository Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mkdocs-configuration-mkdocsyml" class="nav-link">MkDocs Configuration (mkdocs.yml)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#core-elements-of-an-intelligent-textbook" class="nav-link">Core Elements of an Intelligent Textbook</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#best-practices-for-microsim-development" class="nav-link">Best Practices for MicroSim Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#standard-microsim-template-sketchjs" class="nav-link">Standard MicroSim Template (sketch.js)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#metrics-for-measuring-textbook-quality" class="nav-link">Metrics for Measuring Textbook Quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#automating-metrics-collection" class="nav-link">Automating Metrics Collection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="best-practices-for-creating-intelligent-textbooks-with-mkdocs-material">Best Practices for Creating Intelligent Textbooks with MkDocs Material</h1>
+<p>This guide outlines the best practices for creating engaging, interactive intelligent textbooks using the MkDocs Material system with MicroSims.</p>
+<h2 id="repository-structure">Repository Structure</h2>
+<pre><code>repository/
+├── docs/                    # Content directory
+│   ├── index.md             # Home page
+│   ├── about.md             # About page
+│   ├── img/                 # Images directory
+│   ├── css/                 # Custom CSS
+│   ├── js/                  # Custom JavaScript
+│   ├── sims/                # MicroSims directory
+│   │   ├── sim1/           
+│   │   │   ├── index.md     # MicroSim documentation
+│   │   │   ├── sketch.js    # p5.js code
+│   │   ├── sim2/
+│   │   └── index.md         # MicroSims gallery page
+│   ├── tutorial/            # Tutorial section
+│   ├── glossary.md          # Glossary of terms
+│   └── learning-graph.md    # Learning graph visualization
+├── mkdocs.yml               # Configuration file
+└── requirements.txt         # Python dependencies
+
+</code></pre>
+<h2 id="mkdocs-configuration-mkdocsyml">MkDocs Configuration (mkdocs.yml)</h2>
+<pre><code class="language-yaml">site_name: Your Intelligent Textbook
+site_description: 'Description of your intelligent textbook'
+site_author: 'Your Name'
+repo_name: 'GitHub Repo'
+site_url: 'https://yourusername.github.io/your-repo/'
+repo_url: 'https://github.com/yourusername/your-repo'
+edit_uri: 'blob/master/docs'
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Learning Paths:
+    - Introduction: learning-paths/index.md
+    - Path 1: learning-paths/path1.md
+  - Tutorial:
+    - Introduction: tutorial/index.md
+    - Getting Started: tutorial/getting-started.md
+  - MicroSims:
+    - Gallery: sims/index.md
+    - Simulation 1: sims/sim1/index.md
+  - Glossary: glossary.md
+  - Learning Graph: learning-graph.md
+
+theme:
+  name: material
+  logo: img/logo.png
+  favicon: img/favicon.ico
+  palette:
+    primary: 'blue'
+    accent: 'orange'
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+    - navigation.footer
+    - content.action.edit
+
+plugins:
+  - search
+  - social
+
+markdown_extensions:
+  - admonition
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.highlight:
+      linenums: true
+
+extra_css:
+  - css/extra.css
+extra_javascript:
+  - js/extra.js
+  - https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js
+</code></pre>
+<h2 id="core-elements-of-an-intelligent-textbook">Core Elements of an Intelligent Textbook</h2>
+<h3 id="1-learning-graph">1. Learning Graph</h3>
+<p>A learning graph visualizes the relationships between concepts in your textbook, helping students understand prerequisites and learning paths.</p>
+<pre><code class="language-html">&lt;div id=&quot;learning-graph&quot; style=&quot;width: 100%; height: 600px;&quot;&gt;&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vis-network@9.1.2/dist/vis-network.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+  // Nodes represent concepts
+  const nodes = [
+    { id: 1, label: &quot;Concept 1&quot; },
+    { id: 2, label: &quot;Concept 2&quot; },
+    { id: 3, label: &quot;Concept 3&quot; }
+  ];
+
+  // Edges represent relationships/prerequisites
+  const edges = [
+    { from: 1, to: 2 },
+    { from: 1, to: 3 }
+  ];
+
+  const container = document.getElementById('learning-graph');
+  const data = { nodes: nodes, edges: edges };
+  const options = {
+    nodes: {
+      shape: 'box',
+      margin: 10,
+      font: { size: 14 }
+    },
+    edges: {
+      arrows: 'to',
+      smooth: true
+    },
+    physics: {
+      enabled: true,
+      solver: 'forceAtlas2Based'
+    }
+  };
+
+  new vis.Network(container, data, options);
+});
+&lt;/script&gt;
+</code></pre>
+<h3 id="2-interactive-admonitions">2. Interactive Admonitions</h3>
+<p>Use MkDocs Material's admonitions for callouts, tips, and interactive elements.</p>
+<pre><code class="language-markdown">!!! note &quot;Key Concept&quot;
+    This is an important concept to understand.
+
+!!! example &quot;Try it yourself&quot;
+    Here's an example to work through on your own.
+
+!!! question &quot;Check Your Understanding&quot;
+    What would happen if you changed the value of x?
+
+??? tip &quot;Hint (click to reveal)&quot;
+    Look at the relationship between x and y.
+</code></pre>
+<h3 id="3-microsim-integration">3. MicroSim Integration</h3>
+<p>MicroSims are small, interactive simulations that demonstrate concepts. Below is the standard structure for embedding a p5.js MicroSim:</p>
+<pre><code class="language-html">&lt;div class=&quot;microsim-container&quot;&gt;
+  &lt;div id=&quot;microsim-canvas&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;microsim-controls&quot;&gt;
+    &lt;button id=&quot;start-btn&quot;&gt;Start&lt;/button&gt;
+    &lt;button id=&quot;pause-btn&quot;&gt;Pause&lt;/button&gt;
+    &lt;button id=&quot;reset-btn&quot;&gt;Reset&lt;/button&gt;
+    &lt;div class=&quot;slider-container&quot;&gt;
+      &lt;label for=&quot;speed-slider&quot;&gt;Speed:&lt;/label&gt;
+      &lt;input type=&quot;range&quot; id=&quot;speed-slider&quot; min=&quot;1&quot; max=&quot;10&quot; value=&quot;5&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;sketch.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="4-embedded-quizzes">4. Embedded Quizzes</h3>
+<p>Embed interactive quizzes to test comprehension.</p>
+<pre><code class="language-html">&lt;div class=&quot;quiz-container&quot;&gt;
+  &lt;div class=&quot;quiz-question&quot;&gt;
+    &lt;p&gt;What is the primary advantage of using MicroSims in education?&lt;/p&gt;
+    &lt;form class=&quot;quiz-options&quot;&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;opt1&quot; name=&quot;q1&quot; value=&quot;a&quot;&gt;
+        &lt;label for=&quot;opt1&quot;&gt;They look visually appealing&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;opt2&quot; name=&quot;q1&quot; value=&quot;b&quot;&gt;
+        &lt;label for=&quot;opt2&quot;&gt;They allow experiential learning through interaction&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;opt3&quot; name=&quot;q1&quot; value=&quot;c&quot;&gt;
+        &lt;label for=&quot;opt3&quot;&gt;They're easy to create&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;opt4&quot; name=&quot;q1&quot; value=&quot;d&quot;&gt;
+        &lt;label for=&quot;opt4&quot;&gt;They load faster than videos&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;button class=&quot;quiz-check&quot;&gt;Check Answer&lt;/button&gt;
+    &lt;div class=&quot;quiz-feedback&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+document.querySelector('.quiz-check').addEventListener('click', function() {
+  const selected = document.querySelector('input[name=&quot;q1&quot;]:checked');
+  const feedback = document.querySelector('.quiz-feedback');
+
+  if (selected) {
+    if (selected.value === 'b') {
+      feedback.innerHTML = 'Correct! MicroSims enable learning through hands-on interaction.';
+      feedback.style.color = 'green';
+    } else {
+      feedback.innerHTML = 'Not quite. Try thinking about how students learn best.';
+      feedback.style.color = 'red';
+    }
+  } else {
+    feedback.innerHTML = 'Please select an answer.';
+    feedback.style.color = 'orange';
+  }
+});
+&lt;/script&gt;
+</code></pre>
+<h3 id="5-glossary-structure">5. Glossary Structure</h3>
+<p>A well-structured glossary helps students quickly reference key terms.</p>
+<pre><code class="language-markdown"># Glossary
+
+#### Concept A
+A detailed explanation of Concept A with examples and related concepts.
+
+#### Concept B
+A detailed explanation of Concept B with examples and related concepts.
+</code></pre>
+<h2 id="best-practices-for-microsim-development">Best Practices for MicroSim Development</h2>
+<ol>
+<li>
+<p><strong>Start with Learning Objectives</strong>: Define what you want students to learn before creating the MicroSim.</p>
+</li>
+<li>
+<p><strong>Keep It Focused</strong>: Each MicroSim should focus on demonstrating a single concept or a closely related set of concepts.</p>
+</li>
+<li>
+<p><strong>Consistent Interface</strong>: Use consistent controls and UI elements across all MicroSims.</p>
+</li>
+<li>
+<p><strong>Responsive Design</strong>: Ensure MicroSims work on different screen sizes.</p>
+</li>
+<li>
+<p><strong>Progressive Enhancement</strong>: Start with basic functionality, then add more complex features.</p>
+</li>
+<li>
+<p><strong>Clear Instructions</strong>: Provide clear instructions on how to use the MicroSim.</p>
+</li>
+<li>
+<p><strong>Meaningful Controls</strong>: Each control should have a clear purpose related to the concept being taught.</p>
+</li>
+<li>
+<p><strong>Visual Feedback</strong>: Provide visual feedback when parameters are changed.</p>
+</li>
+<li>
+<p><strong>Performance Optimization</strong>: Optimize for performance to ensure smooth operation.</p>
+</li>
+<li>
+<p><strong>Accessibility</strong>: Make MicroSims accessible to users with disabilities.</p>
+</li>
+</ol>
+<h2 id="standard-microsim-template-sketchjs">Standard MicroSim Template (sketch.js)</h2>
+<pre><code class="language-javascript">let simulation;
+
+function setup() {
+  // Create canvas and add it to the microsim-canvas element
+  const canvas = createCanvas(600, 400);
+  canvas.parent('microsim-canvas');
+
+  // Initialize the simulation
+  simulation = new Simulation();
+
+  // Set up UI controls
+  setupControls();
+
+  // Start in paused state
+  noLoop();
+}
+
+function draw() {
+  background(240);
+  simulation.update();
+  simulation.display();
+}
+
+// Simulation class to encapsulate logic
+class Simulation {
+  constructor() {
+    this.parameters = {
+      speed: 5,
+      // Add other parameters here
+    };
+
+    this.isRunning = false;
+
+    // Initialize simulation elements
+    this.elements = [];
+  }
+
+  update() {
+    if (this.isRunning) {
+      // Update simulation state based on parameters
+    }
+  }
+
+  display() {
+    // Display simulation elements
+  }
+
+  reset() {
+    // Reset simulation to initial state
+  }
+
+  setParameter(name, value) {
+    this.parameters[name] = value;
+  }
+
+  start() {
+    this.isRunning = true;
+  }
+
+  pause() {
+    this.isRunning = false;
+  }
+}
+
+// Set up event listeners for controls
+function setupControls() {
+  // Start button
+  document.getElementById('start-btn').addEventListener('click', function() {
+    simulation.start();
+    loop();
+  });
+
+  // Pause button
+  document.getElementById('pause-btn').addEventListener('click', function() {
+    simulation.pause();
+    noLoop();
+  });
+
+  // Reset button
+  document.getElementById('reset-btn').addEventListener('click', function() {
+    simulation.reset();
+    redraw();
+  });
+
+  // Speed slider
+  document.getElementById('speed-slider').addEventListener('input', function() {
+    simulation.setParameter('speed', parseInt(this.value));
+  });
+}
+</code></pre>
+<h2 id="metrics-for-measuring-textbook-quality">Metrics for Measuring Textbook Quality</h2>
+<ol>
+<li><strong>Content Metrics</strong>:</li>
+<li>Number of markdown files</li>
+<li>Total word count</li>
+<li>Number of images</li>
+<li>Number of MicroSims</li>
+<li>
+<p>Glossary term count</p>
+</li>
+<li>
+<p><strong>Engagement Metrics</strong>:</p>
+</li>
+<li>Page views per section</li>
+<li>Average time spent on each page</li>
+<li>MicroSim interaction rate</li>
+<li>Quiz completion rate</li>
+<li>
+<p>Quiz success rate</p>
+</li>
+<li>
+<p><strong>Learning Graph Metrics</strong>:</p>
+</li>
+<li>Coverage of concepts</li>
+<li>Connectedness of concepts</li>
+<li>Learning path completeness</li>
+</ol>
+<h2 id="automating-metrics-collection">Automating Metrics Collection</h2>
+<p>Create a Python script to analyze repository metrics (similar to your get-metrics-json.py):</p>
+<pre><code class="language-python">#!/usr/bin/env python3
+
+import os
+import re
+from pathlib import Path
+import argparse
+import json
+
+def count_markdown_files(docs_dir):
+    &quot;&quot;&quot;Count total number of markdown files in the docs directory.&quot;&quot;&quot;
+    return len(list(Path(docs_dir).glob('**/*.md')))
+
+def count_images(docs_dir):
+    &quot;&quot;&quot;Count total number of image files in the docs directory.&quot;&quot;&quot;
+    extensions = ['*.png', '*.jpg', '*.jpeg', '*.gif', '*.svg']
+    count = 0
+    for ext in extensions:
+        count += len(list(Path(docs_dir).glob(f'**/{ext}')))
+    return count
+
+def count_words_in_markdown(docs_dir):
+    &quot;&quot;&quot;Count total number of words in all markdown files.&quot;&quot;&quot;
+    total_words = 0
+    for md_file in Path(docs_dir).glob('**/*.md'):
+        with open(md_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+            # Remove code blocks, inline code, URLs, HTML
+            content = re.sub(r'```.*?```', '', content, flags=re.DOTALL)
+            content = re.sub(r'`.*?`', '', content)
+            content = re.sub(r'http[s]?://\S+', '', content)
+            content = re.sub(r'&lt;.*?&gt;', '', content, flags=re.DOTALL)
+            # Split and count remaining words
+            words = content.split()
+            total_words += len(words)
+    return total_words
+
+def count_microsims(docs_dir):
+    &quot;&quot;&quot;Count MicroSims by looking for sketch.js files in the sims directory.&quot;&quot;&quot;
+    sims_dir = Path(docs_dir) / 'sims'
+    if not sims_dir.exists():
+        return 0
+
+    # Count directories in sims that contain sketch.js
+    microsim_count = 0
+    for sim_dir in [d for d in sims_dir.iterdir() if d.is_dir()]:
+        if (sim_dir / 'sketch.js').exists() or (sim_dir / 'index.js').exists():
+            microsim_count += 1
+
+    return microsim_count
+
+def count_glossary_terms(docs_dir):
+    &quot;&quot;&quot;Count level 4 headers in glossary.md.&quot;&quot;&quot;
+    glossary_path = Path(docs_dir) / 'glossary.md'
+    if not glossary_path.exists():
+        return 0
+
+    with open(glossary_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+        terms = re.findall(r'^####\s+.*$', content, re.MULTILINE)
+        return len(terms)
+
+def analyze_learning_graph(docs_dir):
+    &quot;&quot;&quot;Analyze the learning graph complexity.&quot;&quot;&quot;
+    graph_path = Path(docs_dir) / 'learning-graph.md'
+    if not graph_path.exists():
+        return {&quot;nodes&quot;: 0, &quot;edges&quot;: 0}
+
+    with open(graph_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+        # Extract JavaScript node and edge definitions
+        node_match = re.search(r'const\s+nodes\s*=\s*\[(.*?)\];', content, re.DOTALL)
+        edge_match = re.search(r'const\s+edges\s*=\s*\[(.*?)\];', content, re.DOTALL)
+
+        node_count = 0
+        edge_count = 0
+
+        if node_match:
+            node_section = node_match.group(1)
+            node_count = len(re.findall(r'\{\s*id:', node_section))
+
+        if edge_match:
+            edge_section = edge_match.group(1)
+            edge_count = len(re.findall(r'\{\s*from:', edge_section))
+
+        return {&quot;nodes&quot;: node_count, &quot;edges&quot;: edge_count}
+
+def main():
+    parser = argparse.ArgumentParser(description='Calculate metrics for an intelligent textbook repository.')
+    parser.add_argument('repo_root', help='Root directory of the repository')
+    parser.add_argument('--output', '-o', help='Output JSON file path')
+    args = parser.parse_args()
+
+    docs_dir = os.path.join(args.repo_root, 'docs')
+
+    if not os.path.exists(docs_dir):
+        print(f&quot;Error: docs directory not found at {docs_dir}&quot;)
+        return 1
+
+    # Calculate metrics
+    metrics = {
+        'markdown-file-count': count_markdown_files(docs_dir),
+        'image-count': count_images(docs_dir),
+        'word-count': count_words_in_markdown(docs_dir),
+        'microsim-count': count_microsims(docs_dir),
+        'glossary-term-count': count_glossary_terms(docs_dir),
+        'learning-graph': analyze_learning_graph(docs_dir)
+    }
+
+    # Output results
+    if args.output:
+        with open(args.output, 'w', encoding='utf-8') as f:
+            json.dump(metrics, indent=2, fp=f)
+    else:
+        print(json.dumps(metrics, indent=2))
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Creating intelligent textbooks with MkDocs Material and MicroSims requires a thoughtful approach to structure, content, and interactivity. By following these best practices, you can create engaging educational resources that adapt to students' needs and provide interactive learning experiences.</p>
+<p>The key to success is maintaining a consistent structure, developing focused MicroSims that address specific learning objectives, and continually measuring the effectiveness of your content through metrics collection and analysis.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

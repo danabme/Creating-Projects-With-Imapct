@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Dana Abdel Khalek">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>The Five Levels of Intelligent Textbooks - Creating Projects with Impact</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Creating Projects with Impact</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Course</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../course/syllabus/" class="dropdown-item">Syllabus</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapters/01-social-enterprise-basics/" class="dropdown-item">1. Social Enterprise Basics</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/02-design-thinking/" class="dropdown-item">2. Design Thinking</a>
+</li>
+                                    
+<li>
+    <a href="../../chapters/03-business-model/" class="dropdown-item">3. Business Model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#the-five-levels-of-intelligent-textbooks" class="nav-link">The Five Levels of Intelligent Textbooks</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduction-to-intelligent-textbook-classification" class="nav-link">Introduction to Intelligent Textbook Classification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#learning-graphs-the-foundation-of-intelligent-textbooks" class="nav-link">Learning Graphs: The Foundation of Intelligent Textbooks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-five-level-framework" class="nav-link">The Five-Level Framework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#implementation-strategies-and-considerations" class="nav-link">Implementation Strategies and Considerations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-future-of-intelligent-textbooks" class="nav-link">The Future of Intelligent Textbooks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#summary" class="nav-link">Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#review-questions" class="nav-link">Review Questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#practical-exercise" class="nav-link">Practical Exercise</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generative-ai-project" class="nav-link">Generative AI Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="the-five-levels-of-intelligent-textbooks">The Five Levels of Intelligent Textbooks</h1>
+<iframe src="../../sims/book-levels/main.html" width="600px" height="520px" scrolling="no"
+  style="overflow: hidden;"></iframe>
+
+<h2 id="introduction-to-intelligent-textbook-classification">Introduction to Intelligent Textbook Classification</h2>
+<p>The concept of "intelligent textbooks" has evolved significantly with advancements in technology and educational theory. However, understanding the varying degrees of sophistication in these resources requires a clear classification system. This chapter presents a five-level framework for intelligent textbooks, inspired by the established levels of autonomous driving. This classification helps learning organizations strategize their approach to developing and implementing intelligent textbooks based on their capabilities, resources, and educational goals.</p>
+<p><em>All models are wrong, but some are useful.</em> — George Box</p>
+<p>This framework isn't meant to be rigid but rather serves as a guide to understand the progression of textbook intelligence and functionality. Organizations may find themselves implementing features across different levels or even bypassing certain levels as technology and pedagogical approaches evolve.</p>
+<h2 id="learning-graphs-the-foundation-of-intelligent-textbooks">Learning Graphs: The Foundation of Intelligent Textbooks</h2>
+<p>Before exploring the five levels, it's essential to understand the concept of learning graphs, which form the backbone of truly intelligent educational resources.</p>
+<h3 id="what-are-learning-graphs">What Are Learning Graphs?</h3>
+<p>Learning graphs are concept dependency graphs that help guide intelligent agents in building customized learning paths for each student. These graphs map out concepts within a subject and their prerequisites, enabling navigation through educational content in a structured, personalized manner.</p>
+<p><img alt="Example of a Learning Graph" src="../../img/learning-graph-example.png" /></p>
+<p>With the advent of advanced AI models, generating comprehensive learning graphs has become increasingly efficient. These structured representations of knowledge domains are crucial because:</p>
+<p><em>Representation is the hardest part of AI.</em> — Jeff Hawkins</p>
+<p>Learning graphs serve as the foundation upon which higher levels of textbook intelligence are built, particularly for adaptive and autonomous systems.</p>
+<h2 id="the-five-level-framework">The Five-Level Framework</h2>
+<h3 id="level-1-static-textbooks">Level 1 — Static Textbooks</h3>
+<p><strong>Definition</strong>: Static textbooks are traditional printed or digital formats with no interactive elements.</p>
+<p><strong>Key Characteristics</strong>:
+- Composed purely of text and static images
+- Linear progression through material
+- No digital interactivity or personalization
+- Fixed content that doesn't adapt to the learner</p>
+<p><strong>Current Status</strong>: Over 90% of textbooks used by college students today remain at Level 1.</p>
+<p><strong>Use Cases</strong>: Simple, short content delivery where interaction isn't necessary or where technology access is limited.</p>
+<h3 id="level-2-interactive-content-textbooks">Level 2 — Interactive Content Textbooks</h3>
+<p><strong>Definition</strong>: Interactive textbooks incorporate digital elements that engage the reader beyond passive consumption.</p>
+<p><strong>Key Characteristics</strong>:
+- Keyword search functionality
+- Internal/external hyperlinks (e.g., to Wikipedia)
+- Embedded videos and multimedia content
+- Simple self-assessment quizzes
+- AI-generated MicroSims for concept visualization
+- Detailed glossary with in-text linking
+- Compatibility with social sharing (rich previews)
+- Usage analytics capabilities</p>
+<p><strong>Implementation Tools</strong>:
+- Documentation platforms like mkdocs-material
+- Development environments such as VS Code
+- JavaScript libraries for interactive simulations</p>
+<p><strong>Advantages</strong>:
+- Cost-effective enhancement of learning experiences
+- Facilitates distributed learning through shareable components
+- Improves engagement with multimedia elements
+- Supports basic self-assessment</p>
+<h3 id="level-3-adaptive-textbooks">Level 3 — Adaptive Textbooks</h3>
+<p><strong>Definition</strong>: Adaptive textbooks dynamically adjust content based on user input, performance, and behavior.</p>
+<p><strong>Key Characteristics</strong>:
+- Personalized learning pathways through deterministic rules
+- Concept graph traversal algorithms for content sequencing
+- Selection of material based on assessment performance
+- Time-based rules for content review and reinforcement
+- Continuous recording of concept mastery on personal learning graphs</p>
+<p><strong>Technical Requirements</strong>:
+- Robust data management systems
+- Graph algorithms and traversal mechanisms
+- Vector stores and graph embeddings for content representation</p>
+<p><strong>Considerations</strong>:
+- Privacy concerns with tracking individual performance
+- Regulatory compliance (GDPR, FERPA)
+- Significant investment in security and auditing
+- Ethical implications of personalization</p>
+<h3 id="level-4-textbooks-with-chatbots">Level 4 — Textbooks with Chatbots</h3>
+<p><strong>Definition</strong>: Level 4 textbooks integrate intelligent conversational interfaces to provide real-time assistance and personalization.</p>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li>Integration of Large Language Models (LLMs) as tutoring assistants</li>
+<li>GraphRAG architecture combining multiple AI technologies</li>
+<li>Real-time feedback on student questions</li>
+<li>Content recommendations based on progress and interactions</li>
+<li>Comprehensive logging of student-AI interactions</li>
+</ul>
+<p><strong>Technical Architecture</strong>:</p>
+<ul>
+<li>NLP pipelines for query understanding</li>
+<li>LLMs for response generation</li>
+<li>Embeddings and vector stores for efficient retrieval</li>
+<li>Learning graphs as "ground truth" for factual accuracy</li>
+</ul>
+<p><strong>Implementation Strategies</strong>:
+- Balance between large, powerful LLMs and cost-effective smaller models
+- Consideration of locally-run models (e.g., Ollama) for privacy and efficiency
+- Careful design of logging mechanisms for performance tracking</p>
+<h3 id="level-5-autonomous-ai-textbooks">Level 5 — Autonomous AI Textbooks</h3>
+<p><strong>Definition</strong>: The aspirational level where AI-driven systems fully understand individual learner needs and autonomously generate personalized learning experiences.</p>
+<p><strong>Key Characteristics</strong>:
+- Deep understanding of individual student knowledge and goals
+- Real-time generation of customized lessons through natural language
+- Complete adaptability to learning styles and preferences
+- Autonomous decision-making about learning progression
+- Human-like tutoring capabilities with comprehensive support</p>
+<p><strong>Future Requirements</strong>:
+- Advanced hardware optimized for graph operations
+- More reliable and accurate LLMs
+- Sophisticated privacy-preserving technologies
+- Standardized frameworks for intelligent textbook interoperability</p>
+<p><strong>Current Status</strong>:</p>
+<blockquote>
+<p>"Level 5 textbooks are like cars that drive themselves under all conditions: during a heavy snowstorm at night on roads under heavy construction—in other words, not happening in the near term."</p>
+</blockquote>
+<h2 id="implementation-strategies-and-considerations">Implementation Strategies and Considerations</h2>
+<h3 id="flexible-implementation">Flexible Implementation</h3>
+<p>Organizations don't necessarily need to progress sequentially through all five levels. Depending on specific needs and available technologies, it may be advantageous to:</p>
+<ul>
+<li>Skip certain levels entirely</li>
+<li>Implement features from multiple levels simultaneously</li>
+<li>Focus on particular aspects that deliver the most educational value</li>
+</ul>
+<p>For example, moving directly from Level 2 (interactive) to leveraging LLMs (as in Level 4) for generating responses to student queries might bypass some regulatory challenges associated with storing personal learning data in Level 3 implementations.</p>
+<h3 id="key-considerations-for-implementation">Key Considerations for Implementation</h3>
+<p>When developing intelligent textbooks at any level, consider:</p>
+<ol>
+<li><strong>Educational Goals</strong>: What are the primary learning objectives?</li>
+<li><strong>Technical Resources</strong>: What technologies and expertise are available?</li>
+<li><strong>User Context</strong>: What is the technological proficiency of target learners?</li>
+<li><strong>Regulatory Environment</strong>: What legal and ethical constraints apply?</li>
+<li><strong>Scalability</strong>: How will the solution grow with increasing users?</li>
+<li><strong>Maintenance</strong>: What ongoing support will be required?</li>
+</ol>
+<h3 id="measuring-success">Measuring Success</h3>
+<p>Success metrics for intelligent textbooks should include:</p>
+<ul>
+<li>Learning outcomes and knowledge retention</li>
+<li>Student engagement and satisfaction</li>
+<li>Time efficiency in achieving learning objectives</li>
+<li>Accessibility across diverse learner populations</li>
+<li>Cost-effectiveness compared to traditional methods</li>
+</ul>
+<h2 id="the-future-of-intelligent-textbooks">The Future of Intelligent Textbooks</h2>
+<p>As technologies continue to evolve, we can expect:</p>
+<ul>
+<li>Increasingly sophisticated learning graph generation</li>
+<li>More seamless integration of multiple modalities (text, video, simulations)</li>
+<li>Better standardization for exchanging intelligent textbook content</li>
+<li>Enhanced personalization with improved privacy safeguards</li>
+<li>Greater adoption of MicroSims and interactive elements</li>
+</ul>
+<p>The ultimate vision is to provide equal learning opportunities for all students globally through advanced, accessible intelligent textbooks that adapt to individual needs while maintaining high educational standards.</p>
+<blockquote>
+<p>"Never mistake a clear view for a short distance." — Paul Saffo</p>
+</blockquote>
+<h2 id="summary">Summary</h2>
+<p>The five-level framework for intelligent textbooks provides a structured approach to understanding and implementing increasingly sophisticated educational resources:</p>
+<ul>
+<li><strong>Level 1</strong>: Static textbooks with fixed content</li>
+<li><strong>Level 2</strong>: Interactive textbooks with basic digital enhancements</li>
+<li><strong>Level 3</strong>: Adaptive textbooks that personalize learning paths</li>
+<li><strong>Level 4</strong>: Textbooks with integrated AI chatbots for assistance</li>
+<li><strong>Level 5</strong>: Fully autonomous AI textbooks that function as comprehensive tutors</li>
+</ul>
+<p>Learning graphs serve as the foundation for higher-level implementations, enabling structured representation of knowledge domains and prerequisites. While the full realization of Level 5 remains a future goal, significant advancements in Levels 2-4 are already transforming educational experiences for learners worldwide.</p>
+<h2 id="review-questions">Review Questions</h2>
+<ol>
+<li>
+<p>Compare and contrast Level 2 and Level 3 intelligent textbooks. What key features differentiate them?</p>
+</li>
+<li>
+<p>How do learning graphs contribute to the functionality of adaptive textbooks?</p>
+</li>
+<li>
+<p>What privacy and ethical considerations emerge as textbooks become more intelligent?</p>
+</li>
+<li>
+<p>Explain the GraphRAG architecture used in Level 4 textbooks. How does it enhance the learning experience?</p>
+</li>
+<li>
+<p>Why might an organization choose to implement features from multiple levels rather than progressing sequentially through the framework?</p>
+</li>
+</ol>
+<h2 id="practical-exercise">Practical Exercise</h2>
+<p>Design a learning graph for a topic in your field of expertise. Identify:</p>
+<ul>
+<li>Core concepts that must be understood</li>
+<li>Prerequisites for each concept</li>
+<li>Relationships between different concepts</li>
+<li>Potential assessment points to measure understanding</li>
+</ul>
+<p>Use this learning graph to sketch how a Level 3 adaptive textbook might guide different learners through the material based on their prior knowledge and progress.</p>
+<h2 id="generative-ai-project">Generative AI Project</h2>
+<p>Use a generative tool such as Anthropic Claude or OpenAI ChatGPT to ask it to </p>
+<ul>
+<li>list the 100 core concepts in a course description you give it.  - ask it to build a learning dependency graph of these concepts</li>
+<li>create a graph viewer using vis.js</li>
+<li>for a given end goal, ask it to build a learning path that include all the dependent concepts you don't already know</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
